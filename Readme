@@ -1,0 +1,1 @@
+⚠️ “Hydration mismatch errors may appear in development if browser extensions modify the DOM before hydration. Use incognito mode to confirm if the error is caused by extensions.”
