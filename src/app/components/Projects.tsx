@@ -61,7 +61,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="my-24 max-w-6xl mx-auto px-6">
-      <h2 className="text-3xl font-bold mb-8 text-center">Projects</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center text-white">Projects</h2>
       <div className="grid gap-8 md:grid-cols-2">
         {projects.map(({ title, tech, description, link }, i) => (
           <motion.article

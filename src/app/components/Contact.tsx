@@ -82,7 +82,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="my-24 max-w-3xl mx-auto px-6 text-center">
-      <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+      <h2 className="text-3xl font-bold mb-6 text-white">Contact Me</h2>
       <p className="mb-8 text-gray-400">Feel free to reach out via email or the form below.</p>
 
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 max-w-xl mx-auto">

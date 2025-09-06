@@ -28,7 +28,7 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="my-24 max-w-4xl mx-auto px-6 text-center">
-      <h2 className="text-3xl font-bold mb-8">Tech Stack</h2>
+      <h2 className="text-3xl font-bold mb-8 text-white">Tech Stack</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
         {skills.map(({name, icon, level, label}, i) => (
           <motion.div
