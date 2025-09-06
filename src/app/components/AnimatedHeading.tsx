@@ -29,7 +29,7 @@ const letterVariants: Variants = {
 export function AnimatedHeading({ text, delay = 0 }: { text: string, delay?: number }) {
   return (
     <motion.h2
-      className="text-3xl font-bold mb-6 inline-block"
+      className="text-3xl font-bold mb-6 inline-block text-white"
       variants={containerVariants}
       initial="offscreen"
       animate="visible"
