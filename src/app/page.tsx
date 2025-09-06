@@ -35,7 +35,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
         >
-          I build clean, interactive, modern apps. +++TEST
+          I build clean, interactive, modern apps.
         </motion.p>
 
         <div className="space-y-90">
