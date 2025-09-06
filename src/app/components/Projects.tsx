@@ -12,6 +12,8 @@ import {
 } from "react-icons/si";
 import { JSX } from "react/jsx-runtime";
 import Tooltip from "./Tooltip";
+import { useState } from "react";
+import { ProjectModal } from "./ProjectModal";
 
 const cardVariants: Variants = {
   offscreen: {
@@ -59,20 +61,23 @@ export default function Projects() {
     },
     {
       title: "TradeTrackr",
-      tech: ["React Native", "TypeScript", "SQLITE"],
+      tech: ["React", "TypeScript", "SQLITE"],
       description:
-        "Trading journal mobile app",
+        "Trading journal app using React Native and SQLITE",
       link: "https://github.com/brkrizic/TradeTrackr",
+      privacyPolicyPath: "/tradeTrackr/privacy-policy"
     },
   ];
+
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
     <section id="projects" className="my-24 max-w-6xl mx-auto px-6">
       <h2 className="text-3xl font-bold mb-8 text-center text-white">Projects</h2>
       <div className="grid gap-8 md:grid-cols-2">
-        {projects.map(({ title, tech, description, link }, i) => (
+        {projects.map((project, i) => (
           <motion.article
-            key={title + i}
+            key={project.title + i}
             className="bg-gray-900 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer"
             initial="offscreen"
             whileInView="onscreen"
@@ -85,10 +90,11 @@ export default function Projects() {
               delay: i * 0.2 // stagger effect
             }}
             whileHover={{ scale: 1.03 }}
+            onClick={() => setSelectedProject(project)}
           >
-            <h3 className="text-xl font-semibold mb-2">{title}</h3>
+            <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
             <div className="flex flex-wrap gap-2 mb-4">
-            {tech.map((t) => (
+            {project.tech.map((t) => (
               <span
                 key={t}
                 className="flex items-center gap-1 px-2 py-1 bg-gray-800 rounded-full text-sm text-white"
@@ -101,18 +107,34 @@ export default function Projects() {
             ))}
           </div>
 
-            <p className="text-gray-300 mb-4">{description}</p>
+            <p className="text-gray-300 mb-4">{project.description}</p>
             <a
-              href={link}
+              href={project.link}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
             >
               View project
             </a>
+            <a
+              href={project.privacyPolicyPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-500 hover:underline ml-4"
+            >
+              Privacy Policy
+            </a>
           </motion.article>
         ))}
       </div>
+            {/* Modal */}
+      {selectedProject && (
+        <ProjectModal
+          project={selectedProject}
+          isOpen={!!selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   );
 }
