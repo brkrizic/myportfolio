@@ -57,6 +57,13 @@ export default function Projects() {
         "Advanced blog app using React portals and TypeScript with Spring Boot backend.",
       link: "https://github.com/brkrizic/blogApp",
     },
+    {
+      title: "TradeTrackr",
+      tech: ["React Native", "TypeScript", "SQLITE"],
+      description:
+        "Trading journal mobile app",
+      link: "https://github.com/brkrizic/TradeTrackr",
+    },
   ];
 
   return (
