@@ -21,7 +21,7 @@ export async function saveMessage(data: { name: string; email: string; message: 
 
 // CLIENT SIDE CALLER
 export async function submitForm(data: { name: string; email: string; message: string }) {
-  const res = await fetch("/api/contact", {
+  const res = await fetch("https://myportfolio-pi-one-93.vercel.app/api/contact", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
