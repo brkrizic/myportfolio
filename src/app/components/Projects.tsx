@@ -8,6 +8,7 @@ import Tooltip from "./Tooltip";
 import { ProjectModal } from "./ProjectModal";
 import { ProjectType } from "./constants/ProjectType";
 import { StatusBadge } from "./StatusBadge";
+import { PlatformBadge } from "./PlatformBadge";
 
 // Animation variants
 const cardVariants: Variants = {
@@ -23,7 +24,8 @@ const projects: ProjectType[] = [
     description:
       "Full-stack e-commerce project with routing, global state, authentication, and REST API backend integration.",
     link: "https://github.com/brkrizic/e-commerce",
-    status: "In Progress"
+    status: "In Progress",
+    platform: "Web"
   },
   {
     title: "Blog App",
@@ -31,7 +33,8 @@ const projects: ProjectType[] = [
     description:
       "Advanced blog app using React portals and TypeScript with Spring Boot backend.",
     link: "https://github.com/brkrizic/blogApp",
-    status: "In Progress"
+    status: "In Progress",
+    platform: "Web"
   },
   {
     title: "TradeTrackr",
@@ -42,7 +45,8 @@ const projects: ProjectType[] = [
     privacyPolicyPath: "/tradeTrackr/privacy-policy",
     downloadLink: "/downloads/TradeTrackr.apk",
     status: "Early Access",
-    redditLink: "https://www.reddit.com/r/TradeTrackr2025/"
+    redditLink: "https://www.reddit.com/r/TradeTrackr2025/",
+    platform: "Android"
   },
 ];
 
@@ -71,8 +75,9 @@ const ProjectCard = ({
       {project.icon && <Image src={project.icon} alt={`${project.title} icon`} width={48} height={48} className="rounded" />}
       <div className="flex flex-col">
         <h2 className="text-xl font-bold">{project.title}</h2>
-        {project.status && <StatusBadge status={project.status} />}
+        {project.status && <StatusBadge status={project.status} />} 
       </div>
+      {project.platform && <PlatformBadge platform={project.platform} />}
     </div>
     <p className="text-gray-300">{project.description}</p>
   </motion.article>

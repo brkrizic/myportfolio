@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ProjectType } from "./constants/ProjectType";
 import { StatusBadge } from "./StatusBadge";
 import { FaRedditAlien } from "react-icons/fa";
+import { PlatformBadge } from "./PlatformBadge";
 
 type ProjectModalProps = {
   project: ProjectType;
@@ -61,6 +62,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
               )}
               <h3 className="text-xl font-semibold">{project.title}</h3>
               {project.status && <StatusBadge status={project.status} />}
+              {project.platform && <PlatformBadge platform={project.platform} />}
         </div>
         <p className="mb-2">{project.description}</p>
 
