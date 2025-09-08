@@ -1,5 +1,6 @@
 import { SiApollographql, SiSqlite, SiReact, SiSpringboot, SiTypescript, SiExpress, SiJavascript, SiRedux } from "react-icons/si";
 import Tooltip from "./Tooltip";
+import { JSX } from "react";
 
 // Map tech names to icons
 const techIcons: Record<string, JSX.Element> = {
