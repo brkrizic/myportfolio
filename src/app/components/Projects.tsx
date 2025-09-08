@@ -83,7 +83,7 @@ const ProjectCard = ({
         className="rounded"
       />
     )}
-    <h2 className="text-xl font-bold">{project.title}</h2>
+    <h2 className="text-xl font-bold text-white">{project.title}</h2>
   </div>
 
   {/* Badges row */}
