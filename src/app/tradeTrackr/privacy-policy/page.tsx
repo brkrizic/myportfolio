@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
 
       <h2 className="text-xl font-semibold mt-6 mb-2">5. Contact</h2>
       <p className="mb-4">
-        For questions about this privacy policy, contact us at [your email or GitHub].
+        For questions about this privacy policy, contact me at bruno.krizic1999@gmail.com.
       </p>
     </main>
   );

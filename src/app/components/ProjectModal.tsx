@@ -2,13 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-
-type ProjectType = {
-  title: string;
-  tech: string[];
-  description: string;
-  link: string;
-};
+import { TechBadge } from "./TechBadge";
+import Image from "next/image";
+import { ProjectType } from "./constants/ProjectType";
+import { StatusBadge } from "./StatusBadge";
+import { FaRedditAlien } from "react-icons/fa";
 
 type ProjectModalProps = {
   project: ProjectType;
@@ -18,10 +16,17 @@ type ProjectModalProps = {
 
 export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
   const [mounted, setMounted] = useState(false);
+  const [hideLink, setHideLink] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    setMounted(true)
+
+    if(project.status === "Early Access" || project.status === "Completed"){
+        setHideLink(false);
+    } else {
+        setHideLink(true);
+    }
+  }, [project]);
 
   if (!mounted || !isOpen) return null;
 
@@ -31,22 +36,83 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
       onClick={onClose} // close on overlay click
     >
       <div
-        className="bg-white dark:bg-gray-900 p-6 rounded-lg max-w-lg w-full"
+        className="relative bg-white dark:bg-gray-900 p-6 rounded-lg max-w-lg w-full"
         onClick={(e) => e.stopPropagation()} // prevent closing when clicking content
       >
-        <h2 className="text-xl font-bold mb-2">{project.title}</h2>
-        <p className="mb-2">{project.description}</p>
-        <p className="text-sm text-gray-500 mb-2">
-          Tech: {project.tech.join(", ")}
-        </p>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 underline"
+        {/* X button in top-left */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 font-bold text-lg"
+          aria-label="Close"
         >
-          Visit Project
+          ×
+        </button>
+
+        {/* Modal content */}
+        <div className="flex items-center gap-3 mb-2">
+              {project.icon && (
+                <Image
+                  src={project.icon}
+                  alt={`${project.title} icon`}
+                  width={48}
+                  height={48}
+                  className="rounded"
+                />
+              )}
+              <h3 className="text-xl font-semibold">{project.title}</h3>
+              {project.status && <StatusBadge status={project.status} />}
+        </div>
+        <p className="mb-2">{project.description}</p>
+
+        <div className="flex flex-wrap gap-2 mb-4">
+          Tech Stack: {project.tech.map((t) => (
+            <TechBadge key={t} tech={t} />
+          ))}
+        </div>
+
+        <div className="flex flex-wrap gap-2 mt-4">
+          {project.downloadLink && (
+            <a
+              href={project.downloadLink}
+              download
+              className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Download APK
+            </a>
+          )}
+        {hideLink && (
+            <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 text-blue-500 rounded hover:underline"
+            >
+                View project
+            </a>
+        )}
+        {project.privacyPolicyPath && (
+            <a
+                href={project.privacyPolicyPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 text-blue-500 rounded hover:underline"
+            >
+                Privacy Policy
+            </a>
+        )}
+        {project.redditLink && (
+        <a
+            href={project.redditLink} // use the project-specific link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-1 bg-orange-500 text-white rounded flex items-center gap-2 hover:bg-orange-600"
+        >
+            <FaRedditAlien className="text-lg" />
+            <span>Reddit Community</span>
         </a>
+        )}
+
+        </div>
       </div>
     </div>,
     document.body
