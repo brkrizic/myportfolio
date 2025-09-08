@@ -71,7 +71,7 @@ const ProjectCard = ({
     whileHover={{ scale: 1.03 }}
     onClick={onClick}
   >
-<div className="flex flex-col gap-2 mb-4">
+<div className="flex flex-col gap-2 mb-4 items-center">
   {/* Title row with icon */}
   <div className="flex items-center gap-2">
     {project.icon && (
@@ -91,10 +91,8 @@ const ProjectCard = ({
     {project.status && <StatusBadge status={project.status} />}
     {project.platform && <PlatformBadge platform={project.platform} />}
   </div>
+  <p className="text-gray-300">{project.description}</p>
 </div>
-
-
-    <p className="text-gray-300">{project.description}</p>
   </motion.article>
 );
 
