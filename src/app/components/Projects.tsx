@@ -71,14 +71,29 @@ const ProjectCard = ({
     whileHover={{ scale: 1.03 }}
     onClick={onClick}
   >
-    <div className="flex items-center gap-3 mb-4">
-      {project.icon && <Image src={project.icon} alt={`${project.title} icon`} width={48} height={48} className="rounded" />}
-      <div className="flex flex-col">
-        <h2 className="text-xl font-bold">{project.title}</h2>
-        {project.status && <StatusBadge status={project.status} />} 
-      </div>
-      {project.platform && <PlatformBadge platform={project.platform} />}
-    </div>
+<div className="flex flex-col gap-2 mb-4">
+  {/* Title row with icon */}
+  <div className="flex items-center gap-2">
+    {project.icon && (
+      <Image
+        src={project.icon}
+        alt={`${project.title} icon`}
+        width={32}   // slightly smaller to sit nicely next to title
+        height={32}
+        className="rounded"
+      />
+    )}
+    <h2 className="text-xl font-bold">{project.title}</h2>
+  </div>
+
+  {/* Badges row */}
+  <div className="flex flex-wrap items-center gap-2">
+    {project.status && <StatusBadge status={project.status} />}
+    {project.platform && <PlatformBadge platform={project.platform} />}
+  </div>
+</div>
+
+
     <p className="text-gray-300">{project.description}</p>
   </motion.article>
 );
