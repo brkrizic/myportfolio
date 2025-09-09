@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
       </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2 text-white">1. Data Collection</h2>
-      <p className="mb-4">
+      <p className="mb-4 text-white">
         TradeTrackr stores your trading data (trades, notes, strategy details, and emotions) locally on your device using SQLite. 
         We do not collect, transmit, or share this data with any third parties.
       </p>
