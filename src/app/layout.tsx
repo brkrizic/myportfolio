@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/base/Header";
 import Main from "./components/base/Main";
@@ -18,8 +17,7 @@ import Client3DWrapper from "./components/Client3DWrapper";
 // });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Portfolio of React Developer",
+  title: "BKHub"
 };
 
 export default function RootLayout({
