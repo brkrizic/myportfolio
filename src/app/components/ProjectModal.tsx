@@ -82,7 +82,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
               Download APK
             </a>
           )}
-        {(hideLink || project.link)&& (
+        {(hideLink || project.link) && (
             <a
                 href={project.link}
                 target="_blank"

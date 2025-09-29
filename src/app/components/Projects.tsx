@@ -53,7 +53,7 @@ const projects: ProjectType[] = [
     tech: ["React", "TypeScript"],
     description:
       "JobReady is a web app to organize and track job applications. Users can build professional CVs, log applications, and monitor progress.",
-    link: "job-ready-bk.vercel.app",
+    link: "https://job-ready-bk.vercel.app",
     status: "Early Access",
     platform: "Web"
   },
