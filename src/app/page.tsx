@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import About from "./components/About";
 import Skills from "./components/Skills";

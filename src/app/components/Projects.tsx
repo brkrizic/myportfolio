@@ -4,7 +4,6 @@ import { motion, Variants } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
 
-import Tooltip from "./Tooltip";
 import { ProjectModal } from "./ProjectModal";
 import { ProjectType } from "./constants/ProjectType";
 import { StatusBadge } from "./StatusBadge";
@@ -41,7 +40,7 @@ const projects: ProjectType[] = [
     icon: "/logo/tradetrackricon.png",
     tech: ["React", "TypeScript", "SQLITE"],
     description: "TradeTrackr is a mobile trading journal app designed to help traders of all levels track and analyze their trades.",
-    link: "https://github.com/brkrizic/TradeTrackr",
+    //link: "https://github.com/brkrizic/TradeTrackr",
     privacyPolicyPath: "/tradeTrackr/privacy-policy",
     downloadLink: "/downloads/TradeTrackr.apk",
     status: "Early Access",
