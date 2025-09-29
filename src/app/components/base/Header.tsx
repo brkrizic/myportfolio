@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <div className="text-white font-bold text-xl">MyPortfolio</div>
+        <div className="text-white font-bold text-xl">BKHub</div>
 
         {/* Hamburger button for mobile */}
         <button
