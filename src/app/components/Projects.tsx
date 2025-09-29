@@ -48,6 +48,15 @@ const projects: ProjectType[] = [
     redditLink: "https://www.reddit.com/r/TradeTrackr2025/",
     platform: "Android"
   },
+  {
+    title: "JobReady",
+    tech: ["Next", "TypeScript"],
+    description:
+      "JobReady is a web app to organize and track job applications. Users can build professional CVs, log applications, and monitor progress.",
+    link: "job-ready-bk.vercel.app",
+    status: "Early Access",
+    platform: "Web"
+  },
 ];
 
 // Component for project card
