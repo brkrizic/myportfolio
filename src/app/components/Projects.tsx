@@ -67,6 +67,13 @@ export default function Projects() {
       link: "https://github.com/brkrizic/TradeTrackr",
       privacyPolicyPath: "/tradeTrackr/privacy-policy"
     },
+    {
+      title: "JobReady",
+      tech: ["Next", "TypeScript"],
+      description:
+        "JobReady is a web app to organize and track job applications. Users can build professional CVs, log applications, and monitor progress.",
+      link: "job-ready-bk.vercel.app"
+    },
   ];
 
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
