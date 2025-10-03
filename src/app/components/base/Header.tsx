@@ -67,6 +67,11 @@ export default function Header() {
               Contact
             </a>
           </li>
+          <li>
+            <a href="#mydiploma" className="hover:text-white transition block sm:inline">
+              My Diploma
+            </a>
+          </li>
         </ul>
       </nav>
     </header>

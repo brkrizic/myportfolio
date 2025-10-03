@@ -7,6 +7,7 @@ import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import React, { useLayoutEffect } from "react";
 import { AnimatedHeading } from "./components/AnimatedHeading";
+import MyDiploma from "./components/MyDiploma";
 
 //import Projects from "./components/Projects";
 
@@ -43,8 +44,8 @@ export default function Home() {
           <Skills />
           <Projects />
           <Contact />
+          <MyDiploma />
         </div>
-
       </motion.section>
   );
 }
