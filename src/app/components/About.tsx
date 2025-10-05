@@ -19,7 +19,7 @@ export default function About({ text }: { text: string }) {
         transition={{ duration: 0.6 }}
       >
         <Image
-          src="/brunobw.jpg"
+          src="/bruno.jpg"
           alt="Bruno Krizic"
           fill
           className="object-cover"
