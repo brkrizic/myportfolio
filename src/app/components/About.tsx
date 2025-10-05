@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { AnimatedHeading } from "./AnimatedHeading";
-import Image from "next/image";
 
 export default function About({ text }: { text: string }) {
   return (
@@ -12,18 +11,18 @@ export default function About({ text }: { text: string }) {
     >
       {/* Photo */}
       <motion.div
-        className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg flex-shrink-0"
+        className="relative w-40 h-40 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg flex-shrink-0 bg-gray-300"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.6 }}
       >
-        <Image
+        <motion.img
           src="/bruno.jpg"
           alt="Bruno Krizic"
-          fill
           className="object-cover"
-          priority
+          whileHover={{ scale: 1.1, rotate: 5 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 10 }}
         />
       </motion.div>
 
