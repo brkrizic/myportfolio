@@ -1,31 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  SiReact,
-  SiTypescript,
-  SiRedux,
-  SiTailwindcss,
-  SiSpringboot,
-  SiExpress,
-  SiFramer,
-  SiPostman,
-} from "react-icons/si";
 import Tooltip from "./Tooltip";
+import { Skill } from "./constants/ProjectType";
 
-const skills = [
-  { name: "React", icon: <SiReact className="text-sky-400" />, level: 90, label: "Advanced" },
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" />, level: 85, label: "Advanced" },
-  { name: "Redux", icon: <SiRedux className="text-purple-500" />, level: 75, label: "Intermediate" },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-cyan-400" />, level: 80, label: "Advanced" },
-  { name: "Spring Boot", icon: <SiSpringboot className="text-green-600" />, level: 65, label: "Intermediate" },
-  { name: "Express.js", icon: <SiExpress className="text-white" />, level: 70, label: "Intermediate" },
-  { name: "Framer Motion", icon: <SiFramer className="text-pink-400" />, level: 60, label: "Intermediate" },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" />, level: 75, label: "Intermediate" },
-];
+type SkillsProps = {
+  skills: Skill[]; // ✅ Expect an array of Skill objects
+};
 
 
-export default function Skills() {
+
+export default function Skills({ skills }: SkillsProps) {
   return (
     <section id="skills" className="my-24 max-w-4xl mx-auto px-6 text-center">
       <h2 className="text-3xl font-bold mb-8 text-white">Tech Stack</h2>

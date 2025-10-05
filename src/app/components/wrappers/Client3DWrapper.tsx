@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 
 // Dynamically import the 3D model client-side only
-const My3DModel = dynamic(() => import("./My3DSpace"), {
+const My3DModel = dynamic(() => import("../My3DSpace"), {
   ssr: false,
 });
 

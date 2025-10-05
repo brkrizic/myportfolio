@@ -15,49 +15,6 @@ const cardVariants: Variants = {
   onscreen: { y: 0, opacity: 1, transition: { type: "spring", bounce: 0.5, duration: 1.8 } },
 };
 
-// Projects data
-const projects: ProjectType[] = [
-  {
-    title: "Web-Shop",
-    tech: ["React", "JavaScript", "Redux", "React Router", "REST API", "Express.js"],
-    description:
-      "Full-stack e-commerce project with routing, global state, authentication, and REST API backend integration.",
-    link: "https://github.com/brkrizic/e-commerce",
-    status: "In Progress",
-    platform: "Web"
-  },
-  {
-    title: "Blog App",
-    tech: ["React", "TypeScript", "Redux", "REST API", "Spring Boot"],
-    description:
-      "Advanced blog app using React portals and TypeScript with Spring Boot backend.",
-    link: "https://github.com/brkrizic/blogApp",
-    status: "In Progress",
-    platform: "Web"
-  },
-  {
-    title: "TradeTrackr",
-    icon: "/logo/tradetrackricon.png",
-    tech: ["React", "TypeScript", "SQLITE"],
-    description: "TradeTrackr is a mobile trading journal app designed to help traders of all levels track and analyze their trades.",
-    //link: "https://github.com/brkrizic/TradeTrackr",
-    privacyPolicyPath: "/tradeTrackr/privacy-policy",
-    downloadLink: "/downloads/TradeTrackr.apk",
-    status: "Early Access",
-    redditLink: "https://www.reddit.com/r/TradeTrackr2025/",
-    platform: "Android"
-  },
-  {
-    title: "JobReady",
-    tech: ["React", "TypeScript"],
-    description:
-      "JobReady is a web app to organize and track job applications. Users can build professional CVs, log applications, and monitor progress.",
-    link: "https://job-ready-bk.vercel.app",
-    status: "Early Access",
-    platform: "Web"
-  },
-];
-
 // Component for project card
 const ProjectCard = ({
   project,
@@ -105,7 +62,7 @@ const ProjectCard = ({
 );
 
 // Main Projects component
-export default function Projects() {
+export default function Projects({ projects }: { projects: ProjectType[]}) {
   const [selectedProject, setSelectedProject] = useState<ProjectType | null>(null);
 
   return (

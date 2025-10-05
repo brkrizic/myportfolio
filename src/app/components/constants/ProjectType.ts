@@ -25,3 +25,10 @@ type Platform =
   | "Full-stack"
   | "Embedded / IoT"
   | "Game";
+
+export type Skill = {
+  name: string;
+  icon: React.ReactNode;
+  level: number; // percentage
+  label: "Beginner" | "Intermediate" | "Advanced";
+};

@@ -1,33 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FileDown } from "lucide-react"; // nice clean icon
 
 export default function MyDiploma() {
   return (
     <motion.section
-    id="mydiploma"
-      className="text-center py-24 pt-[120px]"
+      id="mydiploma"
+      className="text-center py-24 pt-[120px] text-gray-200"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <h1 className="text-3xl font-bold mb-6">My Diploma</h1>
+      <h2 className="text-3xl font-bold mb-4 text-white">Diploma & Certification</h2>
+      <p className="max-w-2xl mx-auto text-gray-400 mb-10">
+        I’ve successfully completed my academic degree — a milestone that reflects my dedication to technology,
+        continuous learning, and professional growth as a developer.
+      </p>
 
-      {/* Show as image preview */}
-      <img
-        src="/diploma.png"
-        alt="Diploma"
-        className="mx-auto rounded-lg shadow-lg max-w-lg"
-      />
-
-      {/* Download button */}
       <a
         href="/diploma.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-block px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition"
+        className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 hover:scale-[1.03]"
       >
-        View / Download PDF
+        <FileDown size={20} />
+        View / Download Diploma
       </a>
     </motion.section>
   );
