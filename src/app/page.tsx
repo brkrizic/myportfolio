@@ -21,7 +21,7 @@ import { ProjectType, Skill } from "./components/constants/ProjectType";
 
 export default function Home() {
 
-  const aboutText = `Hi! I’m a passionate full-stack developer who loves building clean, interactive, and modern applications. 
+  const aboutText = `I’m a passionate full-stack developer who loves building clean, interactive, and modern applications. 
         I work with technologies like React, TypeScript, Redux, and Tailwind CSS, and I’ve delivered full-stack projects using Express.js and Spring Boot. 
         I enjoy creating intuitive user experiences and learning advanced concepts in the React ecosystem. 
         My focus is on writing maintainable, efficient code while continuously improving my skills.`;
