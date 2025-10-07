@@ -4,6 +4,8 @@ import Header from "./components/base/Header";
 import Main from "./components/base/Main";
 import Footer from "./components/base/Footer";
 import Client3DWrapper from "./components/wrappers/Client3DWrapper";
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 
 // const geistSans = Geist({
@@ -33,6 +35,8 @@ export default function RootLayout({
           <Main>
             {children}
           </Main>
+          {/* <ScrollToTop/> */}
+          <ScrollToTopButton/>
         <Footer />
       </body>
     </html>
