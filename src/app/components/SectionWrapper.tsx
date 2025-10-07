@@ -11,7 +11,7 @@ export const SectionWrapper = ({ id, children }: { id: string; children: React.R
     <motion.section
       ref={ref}
       id={id}
-      className="h-screen flex justify-center items-center snap-start"
+      className="h-screen flex justify-center items-center snap-start py-24"
       animate={{ scale: isInView ? 1.15 : 1 }}
       transition={{ type: "spring", stiffness: 120, damping: 15 }}
     >

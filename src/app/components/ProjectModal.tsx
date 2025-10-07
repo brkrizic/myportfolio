@@ -88,6 +88,20 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
 
             <p className="mb-3 text-gray-300">{project.description}</p>
 
+            <div className="relative w-64 h-[500px] mx-auto rounded-3xl border-4 border-gray-700 overflow-hidden shadow-lg bg-black mb-3">
+              {/* Screen */}
+              <video
+                src="/demo/tradetrackr.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-2xl"
+              />
+              {/* Optional notch */}
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-2 bg-gray-600 rounded"></div>
+            </div>
+
             <div className="flex flex-wrap gap-2 mb-4">
               Tech Stack:{" "}
               {project.tech.map((t) => (
