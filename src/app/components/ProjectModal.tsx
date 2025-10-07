@@ -58,7 +58,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
         >
           <motion.div
             onClick={(e) => e.stopPropagation()}
-            className="relative bg-white dark:bg-gray-900 p-6 rounded-2xl max-w-lg w-full shadow-xl"
+            className="relative bg-gray-900 p-6 rounded-2xl max-w-lg w-full shadow-xl"
             initial={{ scale: 0.9, opacity: 0, y: 40 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 40 }}
@@ -88,19 +88,28 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
 
             <p className="mb-3 text-gray-300">{project.description}</p>
 
-            <div className="relative w-64 h-[500px] mx-auto rounded-3xl border-4 border-gray-700 overflow-hidden shadow-lg bg-black mb-3">
-              {/* Screen */}
-              <video
-                src="/demo/tradetrackr.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-2xl"
-              />
-              {/* Optional notch */}
-              <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-2 bg-gray-600 rounded"></div>
-            </div>
+            {project.platform === 'Android' && (
+              <div className="relative w-[300px] h-[550px] mx-auto rounded-[3rem] border-[10px] border-neutral-800 overflow-hidden shadow-2xl bg-black mb-8">
+                {/* Screen */}
+                <video
+                  src="/demo/tradeTrackr-demo.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-[10px] w-[calc(100%-20px)] h-[calc(100%-20px)] object-cover rounded-[2.5rem]"
+                />
+
+                {/* Notch */}
+                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-3 bg-neutral-700 rounded-full"></div>
+
+                {/* Side button (optional) */}
+                <div className="absolute right-[-4px] top-20 w-1 h-12 bg-neutral-700 rounded-l-full"></div>
+
+                {/* Bottom home bar (optional) */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-20 h-[4px] bg-neutral-700 rounded-full opacity-70"></div>
+              </div>
+            )}
 
             <div className="flex flex-wrap gap-2 mb-4">
               Tech Stack:{" "}
