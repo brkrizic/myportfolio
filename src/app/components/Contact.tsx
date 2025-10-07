@@ -84,7 +84,7 @@ export default function ContactForm() {
       <div className="max-w-xl w-full">
         <h2 className="text-3xl font-bold mb-6 text-white">Contact Me</h2>
         <p className="mb-8 text-gray-400">
-          Feel free to reach out via email or the form below.
+          Let’s build something great — contact me!
         </p>
 
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 w-full">

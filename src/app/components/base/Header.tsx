@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import MotionLink from "../MotionLink";
+import Logo from "../Logo";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-black bg-opacity-80 backdrop-blur-md z-50">
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <div className="text-white font-bold text-xl">BKHub</div>
+      <Logo/>
 
         {/* Hamburger button for mobile */}
         <button
