@@ -96,7 +96,7 @@ export default function Home() {
           </section>
         </SectionWrapper>
 
-        <>
+        <div className="space-y-10">
 
           <SectionWrapper id="about">
             <About text={aboutText} />
@@ -117,7 +117,7 @@ export default function Home() {
           <SectionWrapper id="mydiploma">
             <MyDiploma />
           </SectionWrapper>
-        </>
+        </div>
       </>
   );
 }
