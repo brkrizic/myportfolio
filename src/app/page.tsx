@@ -96,7 +96,7 @@ export default function Home() {
           </section>
         </SectionWrapper>
 
-        <div className="space-y-10">
+        <div className="space-y-100">
 
           <SectionWrapper id="about">
             <About text={aboutText} />
