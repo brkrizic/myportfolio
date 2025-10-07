@@ -19,12 +19,12 @@ const contactSchema = z.object({
   message: z.string().min(1, "Message is required"),
 });
 
-export default function Contact() {
+export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState<null | string>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const [triggerShake, setTriggerShake] = useState(false); // <-- state to retrigger shake
+  const [triggerShake, setTriggerShake] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -45,7 +45,6 @@ export default function Contact() {
       });
       setErrors(fieldErrors);
 
-      
       setTriggerShake(false);
       setTimeout(() => setTriggerShake(true), 0);
 
@@ -81,84 +80,97 @@ export default function Contact() {
   }, [status]);
 
   return (
-    <section id="contact" className="my-24 max-w-3xl mx-auto px-6 text-center">
-      <h2 className="text-3xl font-bold mb-6 text-white">Contact Me</h2>
-      <p className="mb-8 text-gray-400">Feel free to reach out via email or the form below.</p>
+    <section className="flex flex-col justify-center items-center w-full h-screen px-6 md:px-12 text-center snap-start">
+      <div className="max-w-xl w-full">
+        <h2 className="text-3xl font-bold mb-6 text-white">Contact Me</h2>
+        <p className="mb-8 text-gray-400">
+          Feel free to reach out via email or the form below.
+        </p>
 
-      <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 max-w-xl mx-auto">
-        <fieldset disabled={isSubmitting} className="flex flex-col gap-4">
-          <motion.input
-            type="text"
-            name="name"
-            aria-invalid={!!errors.name}
-            aria-describedby={errors.name ? "name-error" : undefined}
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your Name"
-            required
-            variants={shakeVariant}
-            initial="rest"
-            animate={errors.name && triggerShake ? "shake" : "rest"}
-            className={`p-3 rounded bg-gray-800 text-white focus:outline-none transition-all duration-300 ${
-              errors.name ? "border border-red-500 shadow-red-500/50 shadow-md" : "border border-transparent"
-            }`}
-          />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+        <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4 w-full">
+          <fieldset disabled={isSubmitting} className="flex flex-col gap-4 w-full">
+            {/* Name */}
+            <motion.input
+              type="text"
+              name="name"
+              aria-invalid={!!errors.name}
+              aria-describedby={errors.name ? "name-error" : undefined}
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your Name"
+              required
+              variants={shakeVariant}
+              initial="rest"
+              animate={errors.name && triggerShake ? "shake" : "rest"}
+              className={`p-3 rounded bg-gray-800 text-white focus:outline-none transition-all duration-300 w-full ${
+                errors.name
+                  ? "border border-red-500 shadow-red-500/50 shadow-md"
+                  : "border border-transparent"
+              }`}
+            />
+            {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
 
-          <motion.input
-            type="email"
-            name="email"
-            aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? "email-error" : undefined}
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Your Email"
-            required
-            variants={shakeVariant}
-            initial="rest"
-            animate={errors.email && triggerShake ? "shake" : "rest"}
-            className={`p-3 rounded bg-gray-800 text-white focus:outline-none transition-all duration-300 ${
-              errors.email ? "border border-red-500 shadow-red-500/50 shadow-md" : "border border-transparent"
-            }`}
-          />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {/* Email */}
+            <motion.input
+              type="email"
+              name="email"
+              aria-invalid={!!errors.email}
+              aria-describedby={errors.email ? "email-error" : undefined}
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              required
+              variants={shakeVariant}
+              initial="rest"
+              animate={errors.email && triggerShake ? "shake" : "rest"}
+              className={`p-3 rounded bg-gray-800 text-white focus:outline-none transition-all duration-300 w-full ${
+                errors.email
+                  ? "border border-red-500 shadow-red-500/50 shadow-md"
+                  : "border border-transparent"
+              }`}
+            />
+            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
-          <motion.textarea
-            name="message"
-            aria-invalid={!!errors.message}
-            aria-describedby={errors.message ? "message-error" : undefined}
-            value={formData.message}
-            onChange={handleChange}
-            placeholder="Your Message"
-            required
-            rows={5}
-            variants={shakeVariant}
-            initial="rest"
-            animate={errors.message && triggerShake ? "shake" : "rest"}
-            className={`p-3 rounded bg-gray-800 text-white focus:outline-none transition-all duration-300 ${
-              errors.message ? "border border-red-500 shadow-red-500/50 shadow-md" : "border border-transparent"
-            }`}
-          />
-          {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+            {/* Message */}
+            <motion.textarea
+              name="message"
+              aria-invalid={!!errors.message}
+              aria-describedby={errors.message ? "message-error" : undefined}
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              required
+              rows={5}
+              variants={shakeVariant}
+              initial="rest"
+              animate={errors.message && triggerShake ? "shake" : "rest"}
+              className={`p-3 rounded bg-gray-800 text-white focus:outline-none transition-all duration-300 w-full ${
+                errors.message
+                  ? "border border-red-500 shadow-red-500/50 shadow-md"
+                  : "border border-transparent"
+              }`}
+            />
+            {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold py-3 rounded"
-          >
-            {isSubmitting ? "Sending..." : "Send Message"}
-          </button>
-        </fieldset>
-      </form>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold py-3 rounded w-full"
+            >
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+          </fieldset>
+        </form>
 
-      {status && <p className="mt-6 text-green-400">{status}</p>}
+        {status && <p className="mt-6 text-green-400">{status}</p>}
 
-      <p className="mt-12 text-gray-400">
-        Or email me directly at{" "}
-        <a href="mailto:bruno.krizic1999@gmail.com" className="text-blue-500 hover:underline">
-          bruno.krizic1999@gmail.com
-        </a>
-      </p>
+        <p className="mt-12 text-gray-400">
+          Or email me directly at{" "}
+          <a href="mailto:bruno.krizic1999@gmail.com" className="text-blue-500 hover:underline">
+            bruno.krizic1999@gmail.com
+          </a>
+        </p>
+      </div>
     </section>
   );
 }

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import MotionLink from "../MotionLink";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,29 +50,29 @@ export default function Header() {
           } sm:flex`}
         >
           <li>
-            <a href="#about" className="hover:text-white transition block sm:inline">
+            <MotionLink href="#about">
               About
-            </a>
+            </MotionLink>
           </li>
           <li>
-            <a href="#skills" className="hover:text-white transition block sm:inline">
+            <MotionLink href="#skills">
               Skills
-            </a>
+            </MotionLink>
           </li>
           <li>
-            <a href="#projects" className="hover:text-white transition block sm:inline">
+            <MotionLink href="#projects">
               Projects
-            </a>
+            </MotionLink>
           </li>
           <li>
-            <a href="#contact" className="hover:text-white transition block sm:inline">
+            <MotionLink href="#contact">
               Contact
-            </a>
+            </MotionLink>
           </li>
           <li>
-            <a href="#mydiploma" className="hover:text-white transition block sm:inline">
-              My Diploma
-            </a>
+            <MotionLink href="#mydiploma">
+              Diploma&Certification
+            </MotionLink>
           </li>
         </ul>
       </nav>

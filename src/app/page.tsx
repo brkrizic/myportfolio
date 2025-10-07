@@ -16,6 +16,7 @@ import {
   SiPostman,
 } from "react-icons/si";
 import { ProjectType, Skill } from "./components/constants/ProjectType";
+import { SectionWrapper } from "./components/SectionWrapper";
 
 
 
@@ -79,23 +80,44 @@ export default function Home() {
     },
   ];
 
+  console.log("Hi there 👋");
+
 
   return (
-      <section className="text-center py-24 pt-[120px]">
-        <h1 className="text-3xl font-bold mb-6 inline-block text-white">
-          Hi, I'm <span className="text-sky-400">Bruno</span> — a Web, Desktop, and Mobile App Developer
-        </h1>
-        <p className="text-gray-400 leading-relaxed">
-          I craft modern, responsive, and high-performance applications with clean code and great user experience.
-        </p>
+      <>
+        <SectionWrapper id="intro">
+          <section className="h-screen flex flex-col justify-center items-center text-center px-6 mb-30">
+            <h1 className="text-3xl font-bold mb-6 text-white">
+              Hi, I&apos;m <span className="text-sky-400">Bruno</span> — a Web, Desktop, and Mobile App Developer
+            </h1>
+            <p className="text-gray-400 leading-relaxed max-w-2xl">
+              I craft modern, responsive, and high-performance applications with clean code and great user experience.
+            </p>
+          </section>
+        </SectionWrapper>
 
-        <div className="space-y-90">
-          <About text={aboutText}/>
-          <Skills skills={skills}/>
-          <Projects projects={projects}/>
-          <Contact />
-          <MyDiploma />
-        </div>
-      </section>
+        <>
+
+          <SectionWrapper id="about">
+            <About text={aboutText} />
+          </SectionWrapper>
+
+          <SectionWrapper id="skills">
+            <Skills skills={skills} />
+          </SectionWrapper>
+
+          <SectionWrapper id="projects">
+            <Projects projects={projects} />
+          </SectionWrapper>
+
+          <SectionWrapper id="contact">
+            <Contact />
+          </SectionWrapper>
+
+          <SectionWrapper id="mydiploma">
+            <MyDiploma />
+          </SectionWrapper>
+        </>
+      </>
   );
 }

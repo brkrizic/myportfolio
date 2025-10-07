@@ -5,7 +5,7 @@ import { useState } from 'react';
 export default function AdminMessagesPage() {
   const [password, setPassword] = useState('');
   const [accessGranted, setAccessGranted] = useState(false);
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<unknown[]>([]);
 
   const handleSubmit = async () => {
     try {

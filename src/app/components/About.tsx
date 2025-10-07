@@ -11,7 +11,7 @@ export default function About({ text }: { text: string }) {
     >
       <motion.div
         className="flex flex-col md:flex-row items-center gap-8"
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ scale: 1.1 }}
         transition={{ type: "spring", stiffness: 120, damping: 10 }}
       >
         {/* Photo */}

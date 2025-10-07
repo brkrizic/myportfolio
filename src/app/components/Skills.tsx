@@ -12,9 +12,9 @@ type SkillsProps = {
 
 export default function Skills({ skills }: SkillsProps) {
   return (
-    <section id="skills" className="my-24 max-w-4xl mx-auto px-6 text-center">
+    <section id="skills" className="flex flex-col justify-center items-center w-full px-6 text-center">
       <h2 className="text-3xl font-bold mb-8 text-white">Tech Stack</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 w-full max-w-4xl">
         {skills.map(({name, icon, level, label}, i) => (
           <motion.div
             key={i}
@@ -44,26 +44,26 @@ export default function Skills({ skills }: SkillsProps) {
             <p className="text-xs text-gray-400 mt-1">{level}%</p>
 
             <Tooltip
-  text={
-    label === "Advanced"
-      ? "Used in production, confident in complex use"
-      : label === "Intermediate"
-      ? "Solid experience, still improving"
-      : "Learning the fundamentals"
-  }
->
-  <span
-    className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
-      label === "Advanced"
-        ? "bg-green-700 text-green-100"
-        : label === "Intermediate"
-        ? "bg-blue-700 text-blue-100"
-        : "bg-gray-600 text-gray-100"
-    } cursor-pointer`}
-  >
-    {label}
-  </span>
-</Tooltip>
+              text={
+                label === "Advanced"
+                  ? "Used in production, confident in complex use"
+                  : label === "Intermediate"
+                  ? "Solid experience, still improving"
+                  : "Learning the fundamentals"
+              }
+            >
+              <span
+                className={`text-xs font-semibold px-2 py-0.5 rounded-full ${
+                  label === "Advanced"
+                    ? "bg-green-700 text-green-100"
+                    : label === "Intermediate"
+                    ? "bg-blue-700 text-blue-100"
+                    : "bg-gray-600 text-gray-100"
+                } cursor-pointer`}
+              >
+                {label}
+              </span>
+            </Tooltip>
 
           </motion.div>
         ))}
