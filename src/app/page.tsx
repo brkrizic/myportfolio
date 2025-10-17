@@ -65,7 +65,7 @@ export default function Home() {
       //link: "https://github.com/brkrizic/TradeTrackr",
       privacyPolicyPath: "/tradeTrackr/privacy-policy",
       downloadLink: "/downloads/TradeTrackr.apk",
-      status: "Early Access",
+      status: "Completed",
       redditLink: "https://www.reddit.com/r/TradeTrackr2025/",
       platform: "Android"
     },
