@@ -29,20 +29,20 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
     }
   }, [project]);
 
-  useEffect(() => {
-    if (isOpen) {
-      // Disable scrolling
-      document.body.style.overflow = "hidden";
-    } else {
-      // Re-enable scrolling
-      document.body.style.overflow = "";
-    }
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     // Disable scrolling
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     // Re-enable scrolling
+  //     document.body.style.overflow = "";
+  //   }
 
-    // Cleanup on unmount (in case user navigates away)
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
+  //   // Cleanup on unmount (in case user navigates away)
+  //   return () => {
+  //     document.body.style.overflow = "";
+  //   };
+  // }, [isOpen]);
 
   if (!mounted) return null;
 
