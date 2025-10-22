@@ -29,20 +29,20 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
     }
   }, [project]);
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     // Disable scrolling
-  //     document.body.style.overflow = "hidden";
-  //   } else {
-  //     // Re-enable scrolling
-  //     document.body.style.overflow = "";
-  //   }
+  useEffect(() => {
+    if (isOpen) {
+      // Disable scrolling
+      document.body.style.overflow = "hidden";
+    } else {
+      // Re-enable scrolling
+      document.body.style.overflow = "";
+    }
 
-  //   // Cleanup on unmount (in case user navigates away)
-  //   return () => {
-  //     document.body.style.overflow = "";
-  //   };
-  // }, [isOpen]);
+    // Cleanup on unmount (in case user navigates away)
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
 
   if (!mounted) return null;
 
@@ -50,7 +50,7 @@ export const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) =>
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex justify-center items-start sm:items-center pt-6 sm:pt-0 bg-black/50 backdrop-blur-sm over overflow-y-auto"
           onClick={onClose}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
