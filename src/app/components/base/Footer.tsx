@@ -5,7 +5,7 @@ export default function Footer() {
         <p>© 2025 Bruno Krizic. All rights reserved.</p>
         <div className="flex justify-center space-x-6 my-2">
           <a href="https://github.com/brkrizic" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/bruno-k-99832a29a/" target="_blank">LinkedIn</a>
           <a href="https://twitter.com/@bruno17111999" target="_blank">Twitter</a>
         </div>
         <div className="mt-2">
