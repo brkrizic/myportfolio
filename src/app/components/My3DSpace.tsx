@@ -93,7 +93,7 @@ export default function My3DModel() {
       <pointLight position={[-10, -10, -10]} intensity={0.5} />
       <Suspense fallback={<Html></Html>}>
         <Model scrollY={scrollY} isIdle={isIdle} />
-        <Environment preset="city" />
+        {/* <Environment preset="city" /> */}
       </Suspense>
       <mesh
         receiveShadow
