@@ -22,10 +22,10 @@ import { SectionWrapper } from "./components/SectionWrapper";
 
 export default function Home() {
 
-  const aboutText = `I’m a passionate full-stack developer who loves building clean, interactive, and modern applications. 
-        I work with technologies like React, TypeScript, Redux, and Tailwind CSS, and I’ve delivered full-stack projects using Express.js and Spring Boot. 
-        I enjoy creating intuitive user experiences and learning advanced concepts in the React ecosystem. 
-        My focus is on writing maintainable, efficient code while continuously improving my skills.`;
+  const aboutText = `I’m a passionate full-stack developer who enjoys building clean, intuitive, and modern applications. 
+  I work with JavaScript, TypeScript, and modern frontend frameworks, and I have experience building full-stack projects with Node.js, Express, and Java-based backends. 
+  I focus on creating great user experiences, understanding how systems fit together, and writing maintainable, scalable code. 
+  I’m always learning new technologies and improving my problem-solving skills to build better and more reliable applications.`;
 
   const skills: Skill[] = [
     { name: "React", icon: <SiReact className="text-sky-400" />, level: 90, label: "Advanced" },
